@@ -6,3 +6,5 @@ fun union ([],[]) = []
     | union([], ys) = ys
     | union(xs, []) = xs
     | union(x::xs, ys) = x::union(xs, removeDuplicate(x, ys));
+
+union([1,2,5], [5,5,5]);
