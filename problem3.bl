@@ -1,8 +1,8 @@
-fun removeElement(x, []) = []
-    | removeElement (x, y::ys) =
-        if x = y then ys else y::removeElement(x, ys);
+fun removeDuplicate (x, []) = []
+    | removeDuplicate (x, y::ys) =
+        if x = y then ys else y::removeDuplicate(x, ys);
 
 fun union ([],[]) = []
     | union([], ys) = ys
     | union(xs, []) = xs
-    | union(x::xs, ys) = x::union(xs, removeElement(x, ys));
+    | union(x::xs, ys) = x::union(xs, removeDuplicate(x, ys));
