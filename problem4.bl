@@ -1,0 +1,11 @@
+fun checkElement(x, []) = []
+    | checkElement(x, y::ys) = 
+        if x = y then x else checkElement(x, ys);
+
+(*fun intersection([],[]) = []
+    | intersection(xs, []) = []
+    | intersection([], ys) = []
+    | intersection(x::xs, ys) =
+        checkElement(x, ys)::intersection(xs, ys); *)
+
+checkElement(2, []);
