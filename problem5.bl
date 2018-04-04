@@ -1,0 +1,9 @@
+fun formTuples(x, []) = []
+    | formTuples(x, y::ys) = 
+        (x,y)::formTuples(x, ys);
+
+fun crossProduct([],[]) = []
+    | crossProduct(xs, []) = []
+    | crossProduct([], ys) = []
+    | crossProduct(x::xs, ys) = 
+        formTuples(x, ys) @ crossProduct(xs, ys);
