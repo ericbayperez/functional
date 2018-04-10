@@ -1,11 +1,18 @@
-fun checkElement(x, []) = []
-    | checkElement(x, y::ys) = 
-        if x = y then x else checkElement(x, ys);
+fun member(x, []) = false
+    | member(x, y::ys) = 
+        if x = y then true 
+        else member(x, ys);
 
-(*fun intersection([],[]) = []
+fun intersection([],[]) = []
     | intersection(xs, []) = []
     | intersection([], ys) = []
     | intersection(x::xs, ys) =
-        checkElement(x, ys)::intersection(xs, ys); *)
+        if member(x, ys) then x::intersection(xs, ys)
+        else intersection(xs, ys);
 
-checkElement(2, []);
+fun multiSetIntersection ([]) = []  
+    | multiSetIntersection ([xs]) = xs
+    | multiSetIntersection (xs::ys::xss) =
+        multiSetIntersection(intersection(xs, ys)::xss);
+
+multiSetIntersection([[1,2,4,3], [1,2,3], [1,2,4]]);
