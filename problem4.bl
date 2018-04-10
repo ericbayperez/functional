@@ -14,5 +14,3 @@ fun multiSetIntersection ([]) = []
     | multiSetIntersection ([xs]) = xs
     | multiSetIntersection (xs::ys::xss) =
         multiSetIntersection(intersection(xs, ys)::xss);
-
-multiSetIntersection([[1,2,4,3], [1,2,3], [1,2,4]]);
